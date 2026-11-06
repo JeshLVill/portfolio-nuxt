@@ -4,6 +4,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss'],
   css: ['~/assets/style.css'],
+  vite: {
+    build: {
+      cssMinify: 'esbuild'
+    }
+  },
   app: {
     head: {
       link: [

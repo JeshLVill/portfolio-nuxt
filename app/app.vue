@@ -7,14 +7,16 @@ const route = useRoute()
 
 // Run on initial load
 onMounted(() => {
-  setTimeout(initAnimations, 100)
+  setTimeout(initAnimations, 0)
 })
 
 // Re-run every time the user navigates to a new page route
 watch(() => route.path, () => {
-  setTimeout(initAnimations, 100)
+  setTimeout(initAnimations, 0)
 })
+</script>
 
+<script>
 let vantaEffect = null
 
 onMounted(() => {
@@ -48,8 +50,6 @@ onUnmounted(() => {
 <template>
   <div>
     <div id="background"></div>
-
-    <!-- Global Header / Navbar -->
     <header>
       <h1>Jeshurun Villamor</h1>
       <div class="header-actions">
@@ -63,8 +63,6 @@ onUnmounted(() => {
         </nav>
       </div>
     </header>
-
-    <!-- Active Page Renders Here -->
     <NuxtPage />
   </div>
 </template>

@@ -1,5 +1,19 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { initAnimations } from '~/assets/animations.js'
+
+const route = useRoute()
+
+// Run on initial load
+onMounted(() => {
+  setTimeout(initAnimations, 100)
+})
+
+// Re-run every time the user navigates to a new page route
+watch(() => route.path, () => {
+  setTimeout(initAnimations, 100)
+})
 
 let vantaEffect = null
 

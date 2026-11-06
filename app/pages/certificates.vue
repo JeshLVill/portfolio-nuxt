@@ -66,7 +66,7 @@ const closeModal = () => {
         @click="closeModal"
         class="modal-overlay"
       >
-        <img :src="modalSrc" class="modal-content">
+        <img :src="modalSrc" class="modal-content" alt="Certificate preview">
       </div>
     </main>
   </div>

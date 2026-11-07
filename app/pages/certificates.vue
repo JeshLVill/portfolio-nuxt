@@ -26,9 +26,9 @@ const closeModal = () => {
         <!-- MS Word Certificate Card -->
         <div class="cert-card">
           <img 
-            src="/images/WordCertificate.jpg" 
+            src="/images/certificates/word.jpg" 
             class="cert-img"
-            @click="openModal('/images/WordCertificate.jpg')"
+            @click="openModal('/images/certificates/word.jpg')"
             alt="MS Word Associate Certificate"
           >
           <p class="cert-title">MS Word Associate</p>
@@ -44,9 +44,9 @@ const closeModal = () => {
         <!-- MS PowerPoint Certificate Card -->
         <div class="cert-card">
           <img 
-            src="/images/PowerPointCertificate.jpg" 
+            src="/images/certificates/powerpoint.jpg" 
             class="cert-img"
-            @click="openModal('/images/PowerPointCertificate.jpg')"
+            @click="openModal('/images/certificates/powerpoint.jpg')"
             alt="MS PowerPoint Associate Certificate"
           >
           <p class="cert-title">MS PowerPoint Associate</p>

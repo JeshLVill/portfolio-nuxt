@@ -16,136 +16,76 @@ const closeModal = () => {
 </script>
 
 <template>
-  <div class="container">
-    <main>
-      <section class="page-heading">
-        <h2>Certifications</h2>
+  <div class="mx-auto flex max-w-[1300px] flex-col gap-5 p-5 text-white">
+    <main class="flex-1">
+      <section class="mb-6 flex w-full justify-center px-6 text-center">
+        <h2 class="text-4xl font-bold uppercase tracking-[0.12em]">Certifications</h2>
       </section>
 
-      <div class="certificates-grid">
+      <div class="certificates-grid flex flex-wrap justify-center gap-10 p-4">
         <!-- MS Word Certificate Card -->
-        <div class="cert-card">
+        <div class="cert-card w-full max-w-[450px] rounded-lg bg-[#493fff59] p-5 text-center shadow-2xl transition-transform hover:scale-105">
           <img 
             src="/images/certificates/word.jpg" 
-            class="cert-img"
+            class="cert-img block w-full cursor-pointer rounded-lg"
             @click="openModal('/images/certificates/word.jpg')"
             alt="MS Word Associate Certificate"
           >
-          <p class="cert-title">MS Word Associate</p>
+          <p class="cert-title my-2 text-xl font-bold">MS Word Associate</p>
           <a 
             href="https://www.certiport.com/portal/pages/credentialverification.aspx"
             target="_blank" 
-            class="verify-btn"
+            class="verify-btn mt-3 inline-block rounded-lg bg-[#6215f1c8] px-4 py-2 font-semibold text-white no-underline transition hover:bg-[#493fffa1]"
           >
             Verify Certification
           </a>
         </div>
 
         <!-- MS PowerPoint Certificate Card -->
-        <div class="cert-card">
+        <div class="cert-card w-full max-w-[450px] rounded-lg bg-[#493fff59] p-5 text-center shadow-2xl transition-transform hover:scale-105">
           <img 
             src="/images/certificates/powerpoint.jpg" 
-            class="cert-img"
+            class="cert-img block w-full cursor-pointer rounded-lg"
             @click="openModal('/images/certificates/powerpoint.jpg')"
             alt="MS PowerPoint Associate Certificate"
           >
-          <p class="cert-title">MS PowerPoint Associate</p>
+          <p class="cert-title my-2 text-xl font-bold">MS PowerPoint Associate</p>
           <a 
             href="https://www.certiport.com/portal/pages/credentialverification.aspx"
             target="_blank" 
-            class="verify-btn"
+            class="verify-btn mt-3 inline-block rounded-lg bg-[#6215f1c8] px-4 py-2 font-semibold text-white no-underline transition hover:bg-[#493fffa1]"
           >
             Verify Certification
           </a>
         </div>
       </div>
 
-      <!-- Image Preview Modal -->
-      <div 
-        v-if="isModalOpen" 
-        @click="closeModal"
-        class="modal-overlay"
-      >
-        <img :src="modalSrc" class="modal-content" alt="Certificate preview">
-      </div>
+      <Teleport to="body">
+        <div
+          v-if="isModalOpen"
+          class="certificate-modal fixed inset-0 flex cursor-pointer items-center justify-center bg-black/80 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Certificate preview"
+          @click.self="closeModal"
+        >
+          <img
+            :src="modalSrc"
+            class="max-h-[90vh] max-w-[90vw] rounded shadow-2xl"
+            alt="Certificate preview"
+            @click.stop
+          >
+        </div>
+      </Teleport>
     </main>
   </div>
 </template>
 
 <style scoped>
-.certificates-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2.5rem;
-  padding: 1rem;
-}
-
-.cert-card {
-  width: 100%;
-  max-width: 450px;
-  padding: 1.25rem;
-  text-align: center;
-  background-color: rgba(73, 63, 255, 0.35);
-  border-radius: 0.5rem;
-  box-shadow: 0 25px 50px -12px rgba(73, 63, 255, 0.4);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  margin: 1.5rem;
-}
-
-.cert-card:hover {
-  transform: scale(1.05);
-}
-
-.cert-img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  display: block;
-}
-
-.cert-title {
-  display: block;
-  font-weight: 700;
-  color: #ffffff;
-  padding-top: 0.5rem;
-  margin: 0.5rem 0;
-  font-size: 1.5rem;
-}
-
-.verify-btn {
-  display: inline-block;
-  margin-top: 0.75rem;
-  padding: 0.5rem 1rem;
-  background-color: #6215f1c8;
-  color: #ffffff;
-  font-weight: 600;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-}
-
-.verify-btn:hover {
-  background-color: #493fffa1;
-}
-
-.modal-overlay {
+.certificate-modal {
   position: fixed;
+  z-index: 9999;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 50;
-  cursor: pointer;
-}
-
-.modal-content {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 0.25rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  isolation: isolate;
 }
 </style>

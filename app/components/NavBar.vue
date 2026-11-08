@@ -1,37 +1,59 @@
+<script setup>
+import { ref, watch } from 'vue'
+
+const isMenuOpen = ref(false)
+const route = useRoute()
+
+watch(() => route.path, () => {
+  isMenuOpen.value = false
+})
+</script>
+
 <template>
-  <header class="bg-[#823fffc7] text-white px-7 py-6 mb-5 flex justify-between items-center sticky top-0 z-10 backdrop-blur-md h-[78px] box-border">
-    <h1 class="text-2xl m-0 font-bold leading-none">
+  <header class="sticky top-0 z-10 mb-5 flex min-h-[78px] items-center justify-between bg-[#823fffc7] px-5 py-4 text-white backdrop-blur-md sm:px-7">
+    <h1 class="m-0 text-2xl font-bold leading-none">
       <NuxtLink to="/" class="text-white no-underline">Jeshurun Villamor</NuxtLink>
     </h1>
-    
-    <div class="flex items-center gap-3.5 flex-wrap relative">
-      <input type="checkbox" id="nav-toggle" class="hidden peer" />
-      <label for="nav-toggle" class="hidden w-11 h-11 rounded-full bg-[#4a3fff] border-none cursor-pointer items-center justify-center relative" aria-label="Toggle Navigation">
-        <span class="block w-[22px] h-0.5 bg-white rounded-xs relative transition-all duration-200 before:content-[''] before:block before:w-[22px] before:h-0.5 before:bg-white before:rounded-xs before:absolute before:-top-[7px] after:content-[''] after:block after:w-[22px] after:h-0.5 after:bg-white after:rounded-xs after:absolute after:top-[7px]"></span>
-      </label>
-      
-      <nav class="flex gap-4 flex-wrap">
+
+    <div class="relative">
+      <button
+        type="button"
+        class="flex h-11 w-11 items-center justify-center rounded-full bg-[#4a3fff] md:hidden"
+        aria-label="Toggle navigation"
+        :aria-expanded="isMenuOpen"
+        @click="isMenuOpen = !isMenuOpen"
+      >
+        <span
+          class="relative block h-0.5 w-[22px] bg-white transition-transform duration-200 before:absolute before:-top-[7px] before:left-0 before:block before:h-0.5 before:w-[22px] before:bg-white before:content-[''] after:absolute after:top-[7px] after:left-0 after:block after:h-0.5 after:w-[22px] after:bg-white after:content-['']"
+          :class="{ 'rotate-45 before:rotate-90 before:top-0 after:opacity-0': isMenuOpen }"
+        />
+      </button>
+
+      <nav
+        class="nav-links absolute right-0 top-14 hidden w-52 flex-col gap-3 rounded-2xl border border-white/20 bg-[#493fff] p-4 shadow-xl md:static md:flex md:w-auto md:flex-row md:gap-4 md:border-0 md:bg-transparent md:p-0 md:shadow-none"
+        :class="{ '!flex': isMenuOpen }"
+      >
         <NuxtLink 
           to="/" 
-          class="inline-block bg-[#4a3fff] text-white px-[18px] py-[10px] rounded-full font-semibold no-underline border border-white/40 transition-all duration-200 hover:bg-[#3326cc] hover:-translate-y-px hover:border-white"
+          class="inline-block rounded-full border border-white/40 bg-[#4a3fff] px-[18px] py-[10px] font-semibold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:border-white hover:bg-[#3326cc]"
         >
           Home
         </NuxtLink>
         <NuxtLink 
           to="/about" 
-          class="inline-block bg-[#4a3fff] text-white px-[18px] py-[10px] rounded-full font-semibold no-underline border border-white/40 transition-all duration-200 hover:bg-[#3326cc] hover:-translate-y-px hover:border-white"
+          class="inline-block rounded-full border border-white/40 bg-[#4a3fff] px-[18px] py-[10px] font-semibold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:border-white hover:bg-[#3326cc]"
         >
           About
         </NuxtLink>
         <NuxtLink 
           to="/tech-stack" 
-          class="inline-block bg-[#4a3fff] text-white px-[18px] py-[10px] rounded-full font-semibold no-underline border border-white/40 transition-all duration-200 hover:bg-[#3326cc] hover:-translate-y-px hover:border-white"
+          class="inline-block rounded-full border border-white/40 bg-[#4a3fff] px-[18px] py-[10px] font-semibold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:border-white hover:bg-[#3326cc]"
         >
           Tech Stack
         </NuxtLink>
         <NuxtLink 
           to="/certificates" 
-          class="inline-block bg-[#4a3fff] text-white px-[18px] py-[10px] rounded-full font-semibold no-underline border border-white/40 transition-all duration-200 hover:bg-[#3326cc] hover:-translate-y-px hover:border-white"
+          class="inline-block rounded-full border border-white/40 bg-[#4a3fff] px-[18px] py-[10px] font-semibold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:border-white hover:bg-[#3326cc]"
         >
           Certifications
         </NuxtLink>

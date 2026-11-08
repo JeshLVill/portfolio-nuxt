@@ -25,19 +25,30 @@ export function initAnimations() {
   // 2. Initial Entrance Animations (Header & Stagger targets)
   const header = document.querySelector('header');
   if (header) {
-    gsap.from(header, { duration: 0.6, y: -20, opacity: 0, ease: 'power3.out', overwrite: 'auto' });
+    gsap.killTweensOf(header);
+    gsap.fromTo(
+      header,
+      { y: -20, opacity: 0 },
+      { duration: 0.6, y: 0, opacity: 1, ease: 'power3.out', overwrite: 'auto' },
+    );
   }
 
   const selectorString = '.home-content, .about-box, .tech-item, .cert-item, .cert-card, .certifications-heading, .profile-info, .about-content';
   const revealTargets = document.querySelectorAll(selectorString);
   if (revealTargets.length > 0) {
-    gsap.from(revealTargets, {
-      duration: 0.6,
-      y: 15,
-      opacity: 0,
-      ease: 'power3.out',
-      stagger: 0.05,
-    });
+    gsap.killTweensOf(revealTargets);
+    gsap.fromTo(
+      revealTargets,
+      { y: 15, opacity: 0 },
+      {
+        duration: 0.6,
+        y: 0,
+        opacity: 1,
+        ease: 'power3.out',
+        stagger: 0.05,
+        overwrite: 'auto',
+      },
+    );
   }
 
   // 3. Persistent Micro-interactions (Buttons & Cards)

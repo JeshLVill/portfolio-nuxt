@@ -12,7 +12,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center p-5 bg-[#493fff91] backdrop-blur-md border border-white/20 rounded-[7px] text-white transition-all duration-200 hover:-translate-y-1 shadow-lg">
+  <div class="tech-item flex flex-col items-center justify-center rounded-[7px] border border-white/20 bg-[#493fff91] p-5 text-white shadow-lg backdrop-blur-md transition-all duration-200 hover:-translate-y-1">
     <img :src="icon" :alt="name" class="w-[120px] h-[120px] object-contain mb-2.5 transition-transform duration-200 hover:-translate-y-1" />
     <p class="m-0 text-base font-bold tracking-wide">{{ name }}</p>
   </div>

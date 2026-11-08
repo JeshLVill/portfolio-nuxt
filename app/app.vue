@@ -48,21 +48,15 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div>
+  <div class="relative min-h-screen bg-transparent text-white flex flex-col">
     <div id="background"></div>
-    <header>
-      <h1>Jeshurun Villamor</h1>
-      <div class="header-actions">
-        <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
-        <label for="nav-toggle" class="nav-toggle" aria-label="Toggle navigation"><span></span></label>
-        <nav class="nav-links">
-          <NuxtLink class="button home-button" to="/">Home</NuxtLink>
-          <NuxtLink class="button about-button" to="/about">About</NuxtLink>
-          <NuxtLink class="button techstack-button" to="/tech-stack">Tech Stack</NuxtLink>
-          <NuxtLink class="button certificates-button" to="/certificates">Certifications</NuxtLink>
-        </nav>
-      </div>
-    </header>
-    <NuxtPage />
+    
+    <!-- This is your new clean Navbar component -->
+    <NavBar />
+    
+    <!-- Main content area -->
+    <main class="flex-1">
+      <NuxtPage />
+    </main>
   </div>
 </template>

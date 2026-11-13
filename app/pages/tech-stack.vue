@@ -38,7 +38,6 @@ useSeoMeta({
       <TechCard name="GitHub" icon="/images/tech-stack/github.png" />
       <TechCard name="PostgreSQL" icon="/images/tech-stack/postgresql.png" />
       <TechCard name="VS Code" icon="/images/tech-stack/vscode.png" />
-      <TechCard name="C" icon="/images/tech-stack/c.png" />
     </div>
   </div>
 </template>

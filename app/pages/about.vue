@@ -28,23 +28,14 @@ useSeoMeta({
       </section>
       <div class="about-content mx-auto w-full max-w-[1100px]">
         <div class="about-grid grid gap-6">
-          <div class="about-box card rounded-3xl border border-white/20 bg-[#473dff61] text-lg shadow-2xl">
-            <div class="card-body p-7 md:p-9">
-              <h2 class="card-title mb-4 text-3xl">About Me</h2>
-              <p class="leading-7 text-[#f5f5ff]">
-              As a passionate developer, I actively seek out new technologies and enjoy working on interactive projects. I have developed applications as a Java programmer, and built systems based on GUIs and databases. These experiences created opportunities to strengthen my programming and problem solving skills. I prefer to build well-designed projects and think about the interactive experiences of the users. I strive to improve my creativity and technical expertise in all my work, beyond programming projects.
-              </p>
-            </div>
-          </div>
-
-          <div class="about-box card rounded-3xl border border-white/20 bg-[#473dff61] text-lg shadow-2xl">
-            <div class="card-body p-7 md:p-9">
-              <h2 class="card-title mb-4 text-3xl">Aspirations</h2>
-              <p class="leading-7 text-[#f5f5ff]">
-              I intend to become an accomplished software developer with an aspiration to work in game development. I have a keen interest in designing games and other digital products that can be enjoyed by many people while at the same time upgrading my programming, design, and development skills. My dream for the future is to work in interesting projects that are both creative and technological.
-              </p>
-            </div>
-          </div>
+          <AboutCard
+            title="About Me"
+            content="As a passionate developer, I actively seek out new technologies and enjoy working on interactive projects. I have developed applications as a Java programmer, and built systems based on GUIs and databases. These experiences created opportunities to strengthen my programming and problem solving skills. I prefer to build well-designed projects and think about the interactive experiences of the users. I strive to improve my creativity and technical expertise in all my work, beyond programming projects."
+          />
+          <AboutCard
+            title="Aspirations"
+            content="I intend to become an accomplished software developer with an aspiration to work in game development. I have a keen interest in designing games and other digital products that can be enjoyed by many people while at the same time upgrading my programming, design, and development skills. My dream for the future is to work in interesting projects that are both creative and technological."
+          />
         </div>
       </div>
     </main>

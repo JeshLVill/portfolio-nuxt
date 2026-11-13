@@ -25,5 +25,6 @@ watch(() => route.path, animatePage)
     <main class="flex-1">
       <NuxtPage />
     </main>
+
   </div>
 </template>

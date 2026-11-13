@@ -43,39 +43,43 @@ useSeoMeta({
 
       <div class="certificates-grid flex flex-wrap justify-center gap-10 p-4">
         <!-- MS Word Certificate Card -->
-        <div class="cert-card w-full max-w-[450px] rounded-lg bg-[#493fff59] p-5 text-center shadow-2xl transition-transform hover:scale-105">
+        <div class="cert-card card w-full max-w-[450px] rounded-lg bg-[#493fff59] text-center shadow-2xl transition-transform hover:scale-105">
           <img 
             src="/images/certificates/word.jpg" 
             class="cert-img block w-full cursor-pointer rounded-lg"
             @click="openModal('/images/certificates/word.jpg')"
             alt="MS Word Associate Certificate"
           >
-          <p class="cert-title my-2 text-xl font-bold">MS Word Associate</p>
+          <div class="card-body items-center p-5">
+            <p class="cert-title my-2 text-xl font-bold">MS Word Associate</p>
           <a 
             href="https://www.certiport.com/portal/pages/credentialverification.aspx"
             target="_blank" 
-            class="verify-btn mt-3 inline-block rounded-lg bg-[#6215f1c8] px-4 py-2 font-semibold text-white no-underline transition hover:bg-[#493fffa1]"
+            class="verify-btn btn mt-3 rounded-lg border-0 bg-[#6215f1c8] px-4 py-2 font-semibold text-white no-underline transition hover:bg-[#493fffa1]"
           >
             Verify Certification
           </a>
+          </div>
         </div>
 
         <!-- MS PowerPoint Certificate Card -->
-        <div class="cert-card w-full max-w-[450px] rounded-lg bg-[#493fff59] p-5 text-center shadow-2xl transition-transform hover:scale-105">
+        <div class="cert-card card w-full max-w-[450px] rounded-lg bg-[#493fff59] text-center shadow-2xl transition-transform hover:scale-105">
           <img 
             src="/images/certificates/powerpoint.jpg" 
             class="cert-img block w-full cursor-pointer rounded-lg"
             @click="openModal('/images/certificates/powerpoint.jpg')"
             alt="MS PowerPoint Associate Certificate"
           >
-          <p class="cert-title my-2 text-xl font-bold">MS PowerPoint Associate</p>
+          <div class="card-body items-center p-5">
+            <p class="cert-title my-2 text-xl font-bold">MS PowerPoint Associate</p>
           <a 
             href="https://www.certiport.com/portal/pages/credentialverification.aspx"
             target="_blank" 
-            class="verify-btn mt-3 inline-block rounded-lg bg-[#6215f1c8] px-4 py-2 font-semibold text-white no-underline transition hover:bg-[#493fffa1]"
+            class="verify-btn btn mt-3 rounded-lg border-0 bg-[#6215f1c8] px-4 py-2 font-semibold text-white no-underline transition hover:bg-[#493fffa1]"
           >
             Verify Certification
           </a>
+          </div>
         </div>
       </div>
 

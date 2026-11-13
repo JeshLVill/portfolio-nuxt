@@ -10,7 +10,7 @@ watch(() => route.path, () => {
 </script>
 
 <template>
-  <header class="relative sticky top-0 z-10 mb-5 flex min-h-[78px] items-center justify-between bg-[#823fffc7] px-5 py-4 text-white backdrop-blur-md sm:px-7">
+  <header class="navbar relative sticky top-0 z-10 mb-5 flex min-h-[78px] items-center justify-between bg-[#823fffc7] px-5 py-4 text-white backdrop-blur-md sm:px-7">
     <h1 class="m-0 text-2xl font-bold leading-none">
       <NuxtLink to="/" class="text-white no-underline">Jeshurun Villamor</NuxtLink>
     </h1>
@@ -18,7 +18,7 @@ watch(() => route.path, () => {
     <div>
       <button
         type="button"
-        class="flex h-11 w-11 items-center justify-center rounded-full bg-[#4a3fff] md:hidden"
+        class="btn btn-circle flex h-11 w-11 items-center justify-center border-0 bg-[#4a3fff] md:hidden"
         aria-label="Toggle navigation"
         :aria-expanded="isMenuOpen"
         @click="isMenuOpen = !isMenuOpen"
@@ -35,25 +35,25 @@ watch(() => route.path, () => {
       >
         <NuxtLink 
           to="/" 
-          class="inline-block rounded-full border border-white/40 bg-[#4a3fff] px-[18px] py-[10px] font-semibold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:border-white hover:bg-[#3326cc]"
+          class="btn inline-block rounded-full border border-white/40 bg-[#4a3fff] px-[18px] py-[10px] font-semibold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:border-white hover:bg-[#3326cc]"
         >
           Home
         </NuxtLink>
         <NuxtLink 
           to="/about" 
-          class="inline-block rounded-full border border-white/40 bg-[#4a3fff] px-[18px] py-[10px] font-semibold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:border-white hover:bg-[#3326cc]"
+          class="btn inline-block rounded-full border border-white/40 bg-[#4a3fff] px-[18px] py-[10px] font-semibold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:border-white hover:bg-[#3326cc]"
         >
           About
         </NuxtLink>
         <NuxtLink 
           to="/tech-stack" 
-          class="inline-block rounded-full border border-white/40 bg-[#4a3fff] px-[18px] py-[10px] font-semibold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:border-white hover:bg-[#3326cc]"
+          class="btn inline-block rounded-full border border-white/40 bg-[#4a3fff] px-[18px] py-[10px] font-semibold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:border-white hover:bg-[#3326cc]"
         >
           Tech Stack
         </NuxtLink>
         <NuxtLink 
           to="/certificates" 
-          class="inline-block rounded-full border border-white/40 bg-[#4a3fff] px-[18px] py-[10px] font-semibold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:border-white hover:bg-[#3326cc]"
+          class="btn inline-block rounded-full border border-white/40 bg-[#4a3fff] px-[18px] py-[10px] font-semibold text-white no-underline transition-all duration-200 hover:-translate-y-px hover:border-white hover:bg-[#3326cc]"
         >
           Certifications
         </NuxtLink>

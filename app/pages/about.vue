@@ -1,3 +1,25 @@
+<script setup>
+const url = useRequestURL()
+
+
+const title = 'About | Jeshurun Villamor'
+const description = 'Learn more about Jeshurun Villamor, a passionate developer with expertise in Java, JavaScript, Python, and more. Discover his journey, skills, and projects in the world of software development.'
+
+
+useHead({
+  title,
+  link: [{ rel: 'canonical', href: url.href }],
+})
+
+
+useSeoMeta({
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogType: 'website',
+  ogUrl: url.href,
+})
+</script>
 <template>
   <div class="mx-auto flex max-w-[1300px] flex-col gap-5 p-5 text-white">
     <main class="flex-1">

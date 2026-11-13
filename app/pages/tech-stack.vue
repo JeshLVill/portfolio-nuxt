@@ -1,3 +1,23 @@
+<script setup>
+const url = useRequestURL()
+
+const title = 'Tech Stack | Jeshurun Villamor'
+const description = 'Explore the tech stack of Jeshurun Villamor, including programming languages, frameworks, and tools used in development projects.'
+
+useHead({
+  title,
+  link: [{ rel: 'canonical', href: url.href }],
+})
+
+useSeoMeta({
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogType: 'website',
+  ogUrl: url.href,
+})
+</script>
+
 <template>
   <div class="max-w-[1300px] mx-auto p-5 flex flex-col gap-5 text-white">
     <!-- Page Heading -->

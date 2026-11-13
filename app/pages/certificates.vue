@@ -13,6 +13,25 @@ const closeModal = () => {
   isModalOpen.value = false
   modalSrc.value = ''
 }
+const url = useRequestURL()
+
+const title = 'Certifications | Jeshurun Villamor'
+const description = 'Certifications earned by Jeshurun Villamor: Word Associate, PowerPoint Associate'
+
+useHead({
+  title,
+  link: [{ rel: 'canonical', href: url.href }],
+})
+
+useSeoMeta({
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogType: 'website',
+  ogUrl: url.href,
+  ogImage: `${url.origin}/images/certificates/word.jpg`,
+  ogImageAlt: 'Microsoft Office Specialist Word Associate badge',
+})
 </script>
 
 <template>

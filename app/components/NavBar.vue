@@ -10,12 +10,12 @@ watch(() => route.path, () => {
 </script>
 
 <template>
-  <header class="sticky top-0 z-10 mb-5 flex min-h-[78px] items-center justify-between bg-[#823fffc7] px-5 py-4 text-white backdrop-blur-md sm:px-7">
+  <header class="relative sticky top-0 z-10 mb-5 flex min-h-[78px] items-center justify-between bg-[#823fffc7] px-5 py-4 text-white backdrop-blur-md sm:px-7">
     <h1 class="m-0 text-2xl font-bold leading-none">
       <NuxtLink to="/" class="text-white no-underline">Jeshurun Villamor</NuxtLink>
     </h1>
 
-    <div class="relative">
+    <div>
       <button
         type="button"
         class="flex h-11 w-11 items-center justify-center rounded-full bg-[#4a3fff] md:hidden"
@@ -30,7 +30,7 @@ watch(() => route.path, () => {
       </button>
 
       <nav
-        class="nav-links absolute right-0 top-14 hidden w-52 flex-col gap-3 rounded-2xl border border-white/20 bg-[#493fff] p-4 shadow-xl md:static md:flex md:w-auto md:flex-row md:gap-4 md:border-0 md:bg-transparent md:p-0 md:shadow-none"
+        class="nav-links absolute left-0 top-full hidden w-full flex-col gap-3 rounded-b-2xl border border-white/20 bg-[#823fffc7] p-4 shadow-xl backdrop-blur-md md:static md:flex md:w-auto md:flex-row md:gap-4 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-none"
         :class="{ '!flex': isMenuOpen }"
       >
         <NuxtLink 

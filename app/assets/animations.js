@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
 
 let vantaEffect = null;
+let hasAnimatedHeader = false;
 
 // Runs ONCE on initial load (Entrance + Vanta + Hover bindings)
 export function initAnimations() {
@@ -24,28 +25,47 @@ export function initAnimations() {
 
   // 2. Initial Entrance Animations (Header & Stagger targets)
   const header = document.querySelector('header');
-  if (header) {
+  if (header && !hasAnimatedHeader) {
     gsap.killTweensOf(header);
     gsap.fromTo(
       header,
       { y: -20, opacity: 0 },
-      { duration: 0.6, y: 0, opacity: 1, ease: 'power3.out', overwrite: 'auto' },
+      { duration: 1, y: 0, opacity: 1, ease: 'power3.out', overwrite: 'auto' },
     );
+    hasAnimatedHeader = true;
   }
 
-  const selectorString = '.home-content, .about-box, .tech-item, .cert-item, .cert-card, .certifications-heading, .profile-info, .about-content';
-  const revealTargets = document.querySelectorAll(selectorString);
+  const revealTargets = document.querySelectorAll(
+    '.home, .about-box, .cert-item, .cert-card, .certifications-heading, .profile-info, .about-content',
+  );
   if (revealTargets.length > 0) {
     gsap.killTweensOf(revealTargets);
     gsap.fromTo(
       revealTargets,
       { y: 15, opacity: 0 },
       {
-        duration: 0.6,
+        duration: 0.3,
         y: 0,
         opacity: 1,
         ease: 'power3.out',
         stagger: 0.05,
+        overwrite: 'auto',
+      },
+    );
+  }
+
+  const techItems = document.querySelectorAll('.tech-item');
+  if (techItems.length > 0) {
+    gsap.killTweensOf(techItems);
+    gsap.fromTo(
+      techItems,
+      { y: 15, opacity: 0 },
+      {
+        duration: 0.15,
+        y: 0,
+        opacity: 1,
+        ease: 'power2.out',
+        stagger: 0.03,
         overwrite: 'auto',
       },
     );
@@ -79,15 +99,15 @@ export function bindInteractions() {
   });
 
   // Card hover animations
-  document.querySelectorAll('.tech-item, .cert-item, .cert-card, .about-box').forEach((card) => {
+  document.querySelectorAll('.home, .tech-item, .cert-item, .cert-card, .about-box').forEach((card) => {
     if (card.dataset.animated) return;
     card.dataset.animated = 'true';
 
     card.addEventListener('mouseenter', () => {
-      gsap.to(card, { scale: 1.02, duration: 0.2, ease: 'power1.out' });
+      gsap.to(card, { scale: 1.02, duration: 0.12, ease: 'power1.out' });
     });
     card.addEventListener('mouseleave', () => {
-      gsap.to(card, { scale: 1, duration: 0.2, ease: 'power1.out' });
+      gsap.to(card, { scale: 1, duration: 0.12, ease: 'power1.out' });
     });
   });
 }
